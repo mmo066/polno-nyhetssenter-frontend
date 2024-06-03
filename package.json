@@ -12,11 +12,16 @@
   "dependencies": {
     "@politiet/pds": "^1.3.19",
     "@r2wc/react-to-web-component": "^2.0.3",
+    "dompurify": "^3.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.77.4"
   },
   "devDependencies": {
+    "@tanstack/react-router": "^1.34.9",
+    "@tanstack/router-devtools": "^1.34.9",
+    "@tanstack/router-vite-plugin": "^1.34.8",
+    "@types/dompurify": "^3.0.5",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
