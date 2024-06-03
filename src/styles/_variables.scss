@@ -1,0 +1,29 @@
+
+@use 'sass:map'; // Core styling
+
+@use '@politiet/pds/dist/tokens/scss';
+@use '@politiet/pds/dist/style/core/pds-core';
+
+// Components
+@use '@politiet/pds/dist/style/icon/pds-icon';
+@use '@politiet/pds/dist/style/link/pds-link';
+@use '@politiet/pds/dist/style/list/pds-list';
+@use '@politiet/pds/dist/style/spinner/pds-spinner';
+@use '@politiet/pds/dist/style/statusbox/pds-statusbox';
+@use '@politiet/pds/dist/style/button/pds-button';
+
+// Form
+@use '@politiet/pds/dist/style/checkbox/pds-checkbox';
+@use '@politiet/pds/dist/style/error-message/pds-error-message';
+@use '@politiet/pds/dist/style/fieldset/pds-fieldset';
+@use '@politiet/pds/dist/style/radio/pds-radio';
+@use '@politiet/pds/dist/style/text/pds-text';
+@use '@politiet/pds/dist/style/textarea/pds-textarea';
+@use '@politiet/pds/dist/style/textfield/pds-textfield';
+
+$shadow-color: #00000029;
+
+$politietno-column-gutter-size: 15px;
+$politietno-site-max-width: 90rem; //1440px
+$politietno-site-padding-mobile: 10px;
+$politietno-site-padding-desktop: 80px;

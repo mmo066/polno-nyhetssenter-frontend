@@ -1,12 +1,12 @@
-import './App.css'
-
+import { Text } from "@politiet/pds";
 function App() {
-
   return (
-    <>
-      <h1>test</h1>
-    </>
-  )
+    <article className="nyhetssenter">
+      <Text isSectionTitle styleAs="h3" type="span">
+        Test
+      </Text>
+    </article>
+  );
 }
 
-export default App
+export default App;

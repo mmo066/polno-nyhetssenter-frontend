@@ -1,0 +1,24 @@
+@use 'material-icons/iconfont/outlined.css';
+@use 'material-icons/iconfont/filled.css'; // Material icons styling må importeres før PDS
+@use '@politiet/pds/dist/tokens/scss' as *;
+@use '@politiet/pds/dist/style/index';
+@use '@politiet/pds/dist/style/core/pds-core';
+@use '@politiet/pds/dist/style/core/pds-mixins' as *;
+@use './styles/variables' as *;
+
+.nyhetssenter {
+    max-width: $politietno-site-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    @include larger-than($breakpoints-md) {
+      padding-left: $politietno-site-padding-mobile;
+      padding-right: $politietno-site-padding-mobile;
+    }
+
+    @include larger-than($breakpoints-lg) {
+      padding-left: $politietno-site-padding-desktop;
+      padding-right: $politietno-site-padding-desktop;
+    }
+}
