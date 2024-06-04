@@ -21,6 +21,7 @@ import { Route as DistrikterDistriktIdImport } from './routes/distrikter/$distri
 
 const IndexLazyImport = createFileRoute('/')()
 const TemaIndexLazyImport = createFileRoute('/tema/')()
+const NyhetssenterIndexLazyImport = createFileRoute('/nyhetssenter/')()
 const HendelserIndexLazyImport = createFileRoute('/hendelser/')()
 const DistrikterIndexLazyImport = createFileRoute('/distrikter/')()
 
@@ -35,6 +36,13 @@ const TemaIndexLazyRoute = TemaIndexLazyImport.update({
   path: '/tema/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/tema/index.lazy').then((d) => d.Route))
+
+const NyhetssenterIndexLazyRoute = NyhetssenterIndexLazyImport.update({
+  path: '/nyhetssenter/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./routes/nyhetssenter/index.lazy').then((d) => d.Route),
+)
 
 const HendelserIndexLazyRoute = HendelserIndexLazyImport.update({
   path: '/hendelser/',
@@ -111,6 +119,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HendelserIndexLazyImport
       parentRoute: typeof rootRoute
     }
+    '/nyhetssenter/': {
+      id: '/nyhetssenter/'
+      path: '/nyhetssenter'
+      fullPath: '/nyhetssenter'
+      preLoaderRoute: typeof NyhetssenterIndexLazyImport
+      parentRoute: typeof rootRoute
+    }
     '/tema/': {
       id: '/tema/'
       path: '/tema'
@@ -130,6 +145,7 @@ export const routeTree = rootRoute.addChildren({
   TemaTemaIdRoute,
   DistrikterIndexLazyRoute,
   HendelserIndexLazyRoute,
+  NyhetssenterIndexLazyRoute,
   TemaIndexLazyRoute,
 })
 
@@ -147,6 +163,7 @@ export const routeTree = rootRoute.addChildren({
         "/tema/$temaId",
         "/distrikter/",
         "/hendelser/",
+        "/nyhetssenter/",
         "/tema/"
       ]
     },
@@ -167,6 +184,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/hendelser/": {
       "filePath": "hendelser/index.lazy.tsx"
+    },
+    "/nyhetssenter/": {
+      "filePath": "nyhetssenter/index.lazy.tsx"
     },
     "/tema/": {
       "filePath": "tema/index.lazy.tsx"

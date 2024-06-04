@@ -6,6 +6,10 @@
 @use '@politiet/pds/dist/style/core/pds-mixins' as *;
 @use './styles/variables' as *;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .nyhetssenter {
     max-width: $politietno-site-max-width;
     margin-left: auto;
